@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片轮播插件</title>
+    <style type="text/css" rel="stylesheet">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /*想要图片出现重叠的效果*/
+        .content{
+            width: 100%;
+            height: 420px;
+            margin-top: 40px;
+        }
+        .list{
+            width: 1200px;
+            height: 300px;
+            overflow: hidden;   /*溢出的隐藏掉，默认的是：内容不会被修剪，会呈现在元素框之外。*/
+            position: absolute;
+            left: 50%;
+            margin-left: -600px;
+        }
+        li{
+            list-style: none;
+            position: absolute;   /*一定要设置这个*/
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: all 0.3s ease-out;
+        }
+        img{
+            border: none;
+            width: 730px;
+            height: 336px;
+            float: left;
+        }
+
+        .p5{
+            transform: translate3d(-224px,0,0) scale(0.81);
+            transform-origin: 100% 25%;
+            opacity: 0.8;
+            z-index: 2;
+        }
+        .p4{
+            transform:translate3d(224px,0,0) scale(1);
+            z-index: 3;
+            opacity: 1;
+        }
+        .p3{
+            transform: translate3d(449px,0,0) scale(0.81);
+            transform-origin: 100% 25%; /*改变基准的*/
+            opacity: 0.8;
+            z-index: 2;
+        }
+        .p2{
+            transform:translate3d(672px,0,0) scale(0.81);
+        }
+        .p1{
+            transform:translate3d(896px,0,0) scale(0.81);
+        }
+        .pre{
+            left: 224px;
+        }
+        .next{
+            right: 244px;
+        }
+        .button{
+            position: absolute;
+            top:35%;
+            text-decoration: none;
+            font-size: 70px;
+            color: #ffffff;
+            z-index: 5;
+            }
+        a:active{
+            color: #000;
+            opacity:0.5;
+        }
+
+        .buttons{
+            position: absolute;
+            width: 1200px;
+            height: 30px;
+            top:50%;
+            left:50%;
+            margin-top: -15px;
+            margin-left: -600px;
+            text-align: center;
+        }
+        .buttons a{
+            display: inline-block;
+            width: 35px;
+            height: 5px;
+            padding-top: 4px;
+            cursor: pointer;
+        }
+        span{
+            width: 35px;
+            height: 1px;
+            background: red;
+            display: block;
+        }
+        .blue{
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <div class="list">
+        <ul>
+            <li class="p5"><a href="#"><img src="images/1.jpg" alt=""></a></li>
+            <li class="p4"><a href="#"><img src="images/2.jpg" alt=""></a></li>
+            <li class="p3"><a href="#"><img src="images/3.jpg" alt=""></a></li>
+            <li class="p2"><a href="#"><img src="images/4.jpg" alt=""></a></li>
+            <li class="p1"><a href="#"><img src="images/5.jpg" alt=""></a></li>
+        </ul>
+        <a href="javascript:;" class="pre button"><</a>
+        <a href="javascript:;" class="next button">></a>
+    </div>
+
+
+    <!--下面的横线按钮-->
+    <div class="buttons">
+        <a href="javascript:;"><span class="blue"></span></a>
+        <a href="javascript:;"><span></span></a>
+        <a href="javascript:;"><span></span></a>
+        <a href="javascript:;"><span></span></a>
+        <a href="javascript:;"><span></span></a>
+
+    </div>
+</div>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/imagePlayer.js"></script>
+</body>
+</html>
