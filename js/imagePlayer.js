@@ -51,16 +51,13 @@ function show(){
 $a.each(function () {
 
     $(this).click(function () {
-
         var myIndex = $(this).index();
         var dipIndex = myIndex-index;
-        console.log(myIndex+"      "+dipIndex);
         if (dipIndex >= 0){
             for(var i=0;i<dipIndex;i++){
                 cArr.unshift(cArr[4]);//向开头添加p1
                 cArr.pop();
             }
-
         }
         else if (dipIndex < 0){
             for(var i=0;i<-dipIndex;i++){
